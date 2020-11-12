@@ -1,4 +1,5 @@
-Debug = True
+import settings
+
 def create_cypher():
     """ This Function creates a one time Cypher from a given word """
     Cypher = { 11: 'a',  21: 'b',  31: 'c',  41: 'd',  51: 'e', 
@@ -18,35 +19,36 @@ def create_cypher():
             14, 24, 34, 44, 54,
             15, 25, 35, 45, 55]
     selector = 0
-    if Debug:
+    if settings.debug:
         print(Cypher[11], Cypher[13], Cypher[51], Cypher[35])
         print(Alpha)
     word = input('Chose a 5 letter word with no repeating letters or the letters j/k: ')
     wordLower = word.lower()
-    if Debug:
+    if settings.debug:
         print(wordLower)
     
     for letter in wordLower:
             Alpha.remove(letter)
             
-    if Debug:
+    if settings.debug:
         print(Alpha)
     
     for letter in wordLower:
             Key.append(letter)
     
-    if Debug:
+    if settings.debug:
         print(Key)
     
     Final = Key + Alpha
     
-    if Debug:
+    if settings.debug:
         print(Final)
     
     for key in Cypher:
         Cypher[Axis[selector]] = Final[selector]
         selector = selector +1
-    if Debug:
+    if settings.debug:
         print(Cypher)
-        
-create_cypher()
+
+
+
