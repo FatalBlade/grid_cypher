@@ -1,6 +1,7 @@
 # Page.py
 
-from os import urandom
+import random
+import string
 import settings
 
 char = [] # List of usable digits
@@ -8,7 +9,8 @@ char_test = ''
 
 def create_page(bytes):
     """ This function creates the page  """
-    page = urandom(bytes) 
+    letters_and_digits = string.ascii_letters + string.digits + string.punctuation
+    page = ''.join(random.choice(letters_and_digits) for i in range(bytes)) 
     char_count = 0 # Used to determine total number of usable characters
     global char_test
     print(page)
