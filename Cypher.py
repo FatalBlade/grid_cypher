@@ -1,3 +1,4 @@
+# Cypher.py
 import settings
 
 def create_cypher():
@@ -8,26 +9,26 @@ def create_cypher():
                13: 'l',  23: 'm',  33: 'n',  43: 'o',  53: 'p',
                14: 'q',  24: 'r',  34: 's',  44: 't',  54: 'u',
                15: 'v',  25: 'w',  35: 'x',  45: 'y',  55: 'z' }
-    # Default ordered list a-z 
+    # Default ordered list a-z
     Alpha = ['a', 'b', 'c', 'd', 'e',
             'f', 'g', 'h', 'i', 'j/k',
             'l', 'm', 'n', 'o', 'p',
             'q', 'r', 's', 't', 'u',
-            'v', 'w', 'x', 'y', 'z'] 
+            'v', 'w', 'x', 'y', 'z']
     # Will eventually hold a string of the seperate letters of your word
-    Key = [] 
+    Key = []
     # DO NOT CHANGE // Controls the x/y axis' of the cypher
     Axis = [11, 21, 31, 41, 51,
             12, 22, 32, 42, 52,
             13, 23, 33, 43, 53,
             14, 24, 34, 44, 54,
-            15, 25, 35, 45, 55] 
-    # Used to change which location on the cypher you're editing 
+            15, 25, 35, 45, 55]
+    # Used to change which location on the cypher you're editing
     selector = 0
     if settings.debug:
-        # This should say "A l e x" if Cypher is set up properly 
+        # This should say "A l e x" if Cypher is set up properly
         print(Cypher[11], Cypher[13], Cypher[51], Cypher[35])
-        # This should result in the alphabet in order as a list 
+        # This should result in the alphabet in order as a list
         print(Alpha)
     # Prompt user for word
     word = input('Chose a 5 letter word with no repeating letters or the letters j/k: ')
