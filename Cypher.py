@@ -1,5 +1,38 @@
 # Cypher.py
 import settings
+import string
+
+def filter_word(word):
+    """ This function filters given words for specified criteria """
+    letters = {}
+    
+    for letter in word:
+        if letter not in string.ascii_letters:
+            print('A-z only, please try again.')
+            return True
+    if len(word) != 5:
+        print('Word must be 5 characters long, please try again.')
+        return True
+    for letter in word:
+        try:
+            letters[letter] += 1
+        except KeyError:
+            letters[letter] = 1
+    for number in letters.values():
+        if number > 1:
+            print('No repeating letters please try again.')
+            return True
+    return False
+
+def get_word():
+    """ This function prompts a user to input a word """
+    flag_filter = True
+    while flag_filter:
+        word = input('Choose a 5 letter word with no ' +
+                     'repeating letters or the letters j/k: ')
+        flag_filter = filter_word(word) 
+    return word
+
 
 def create_cypher():
     """ This Function creates a one time Cypher from a given word """
@@ -31,7 +64,7 @@ def create_cypher():
         # This should result in the alphabet in order as a list
         print(Alpha)
     # Prompt user for word
-    word = input('Chose a 5 letter word with no repeating letters or the letters j/k: ')
+    word = get_word()
     # Change to lowercase
     wordLower = word.lower()
     if settings.debug:
@@ -69,6 +102,4 @@ def create_cypher():
     if settings.debug:
         # Verifies our dictionary cypher has been created properly
         print(Cypher)
-
-
 
