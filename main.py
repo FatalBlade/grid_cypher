@@ -1,5 +1,5 @@
 from Cypher import create_cypher
-from Page import create_page
+import Page
 import settings
 
 # Initialize settings
@@ -9,5 +9,7 @@ create_cypher()
 print('\n')
 bytess = input('How many bytes do you need? ')
 print('\n')
-create_page(int(bytess))
-#print(char_test)
+index, char_test, page = Page.create_page(int(bytess))
+print(char_test) # Temporary placeholder
+print(page) # Temporary placeholder
+print(index) # Temp[orary placeholder
