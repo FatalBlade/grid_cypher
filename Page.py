@@ -2,12 +2,13 @@
 
 import random
 import string
-import settings
+import settings as config
 
 
 
 def create_page(bytes):
-    """ This function creates the page  """
+    """ This function creates the one time page  """
+    settings = config.settings()
     page = ''.join(random.choice(string.printable) for i in range(bytes)) 
     char_count = 0 # Used to determine total number of usable characters
     char_values = '' # string of returend digets between 1 and 5
