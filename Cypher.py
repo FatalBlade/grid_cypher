@@ -38,7 +38,7 @@ def get_word():
 
 def filter_message(message, index):
     """ This function filters given words for specified criteria """
-    letters = {}
+    # letters = {}
     
     for letter in message:
         if letter not in string.ascii_letters:
@@ -48,6 +48,7 @@ def filter_message(message, index):
         print('Your message is too long you need more bytes, please restart program')
         sleep(10)
         sys.exit()
+    """"
     for letter in message:
         try:
             letters[letter] += 1
@@ -57,16 +58,18 @@ def filter_message(message, index):
         if number > 1:
             print('No repeating letters please try again.')
             return True
+            """
     return False
 
 def get_message(index):
     """ This function prompts a user to input a word """
     flag_filter = True
     while flag_filter:
-        message = input('Choose a 5 letter word with no ' +
-                     'repeating letters or the letters j/k: ')
-        flag_filter = filter_message(message)
-    return message
+        message_input = input('Please type out your message here: ')
+        message_lower = message_input.lower()
+        message = message_lower.replace(" ", "")
+        flag_filter = filter_message(message, index)
+    return (message, index)
 
 def create_cypher():
     """ This Function creates a one time cypher from a given word """
@@ -127,7 +130,6 @@ def create_cypher():
 
 def encrypt(cypher, index):
     """ This function will encrypt a given message using the generated cypher """
-    message = get_message()
-    messagelower = message.lower()
+    message = get_message(index)
 
-    return messagelower
+    return message

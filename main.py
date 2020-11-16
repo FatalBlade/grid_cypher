@@ -13,6 +13,10 @@ index, char_values, page = Page.create_page(int(bytess))
 print(char_values) # Temporary placeholder
 print(page) # Temporary placeholder
 print(index) # Temporary placeholder
+message = Cypher.encrypt(cypher, index)
+print('\n')
+print(message)
+print('\n')
 
 """
 encrypt(cypher, index):
