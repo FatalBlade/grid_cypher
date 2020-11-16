@@ -15,7 +15,7 @@ print(page) # Temporary placeholder
 print(index) # Temporary placeholder
 message = Cypher.encrypt(cypher, index)
 print('\n')
-print(message)
+print(message[0])
 print('\n')
 
 """
