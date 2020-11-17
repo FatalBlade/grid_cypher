@@ -17,11 +17,16 @@ def create_page(bytes):
    
     for position, letter in enumerate(page):
         if letter in ['1', '2', '3', '4', '5']:
-            index.append(position) # Pulls indexes of char for later use
+            # Pulls indexes of char for later use
+            index.append(position)
+            # Adds found number to list
             char_values = char_values + str(letter)
-            char_count = char_count + 1 # Increments character count 
+            # Increments character count
+            char_count = char_count + 1 
             if settings.debug:
-                print('Found ' + letter) # Prints which number was found
-                print(char_count) # Prints current character count
-    if settings.debug: print(char_values)
+                # Prints which number was found
+                print('Found a ' + letter)
+                # Prints current character count
+                print(str(char_count) + ' usable characters')
+    if settings.debug: print('List of values: ' + str(char_values))
     return (index, char_values, page)

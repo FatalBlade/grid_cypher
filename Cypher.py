@@ -93,13 +93,17 @@ def create_cypher():
         print(cypher[12], cypher[11], cypher[44], cypher[11], cypher[13],
               cypher[21], cypher[13], cypher[11], cypher[41], cypher[51])
         # This should result in the alphabet in order as a list
-        print('Alphabet as list: ' + alpha)
+        print('\n')
+        print('Alphabet as list: ', end='')
+        print(alpha)
+        print('\n')
     # Prompt user for word
     word = get_word()
     # Change to lowercase
     wordLower = word.lower()
     if settings.debug:
         # Verifies lowecase conversion
+        print('\n')
         print('Lowercase word: ' + wordLower)
     
     for letter in wordLower:
@@ -108,16 +112,19 @@ def create_cypher():
             
     if settings.debug:
         # Verifies that all letters have been removed
-        print('Striped alphabet: ' + alpha)
-    
+        print('\n')
+        print('Striped alphabet: ', end='')
+        print(alpha)
     for letter in wordLower:
         # Turns string into seperated list of letters
         key.append(letter)
     
     if settings.debug:
         # Verifies that the word has been turned into a list properly
-        print('Keyword: ' + key)
-    
+        print('\n')
+        print('Keyword: ', end='')
+        print(key)
+
     # adds the list of letters from word to the beginning of our alphabet
     Final = key + alpha
     
@@ -132,7 +139,9 @@ def create_cypher():
         selector = selector +1
     if settings.debug:
         # Verifies our dictionary cypher has been created properly
-        print('Edited cypher: ' + cypher)
+        print('\n')
+        print('Edited cypher: ', end='')
+        print(cypher)
     return cypher
 
 def encrypt(cypher, index):
