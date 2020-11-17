@@ -19,7 +19,6 @@ print(message[0])
 print('\n')
 
 """
-encrypt(cypher, index):
 
 replace():
 

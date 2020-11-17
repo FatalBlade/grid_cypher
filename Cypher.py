@@ -90,6 +90,7 @@ def create_cypher():
     selector = 0
     if settings.debug:
         # This should say "f a t a l b l a d e" if cypher is set up properly
+        print('This should say fatalblade: ', end='')
         print(cypher[12], cypher[11], cypher[44], cypher[11], cypher[13],
               cypher[21], cypher[13], cypher[11], cypher[41], cypher[51])
         # This should result in the alphabet in order as a list
@@ -130,6 +131,8 @@ def create_cypher():
     
     if settings.debug:
         # Verifies proper letter order
+        print('\n')
+        print('Final alphabet: ', end='')
         print(Final)
     
     for key in cypher:
