@@ -8,7 +8,6 @@ from time import sleep
 def filter_word(word):
     """ This function filters given words for specified criteria """
     letters = {}
-    
     # Filters for any characters not A-Z, a-z
     for letter in word:
         if letter not in string.ascii_letters:
@@ -76,6 +75,13 @@ def get_message(index):
         print('Lowercase output: ' + message_lower) # Lowercase output
         print('Stripped output: ' + message) # Stripped whitespace output
     return (message, index)
+
+# function to return key for any value
+def get_key(cypher, val):
+    for key, value in cypher.items():
+         if val == value:
+             return key
+    return "key doesn't exist"
 
 def create_cypher():
     """ This Function creates a one time cypher from a given word """
@@ -148,7 +154,9 @@ def create_cypher():
     return cypher
 
 def encrypt(cypher, index):
-    """ This function will encrypt a given message using the generated cypher """
+    """ This function will encrypt a message using the generated cypher """
     message = get_message(index)
-
-    return message
+    encrypted = ''
+    for letter in message[0]:
+        encrypted = encrypted + str(get_key(cypher, letter))
+    return encrypted

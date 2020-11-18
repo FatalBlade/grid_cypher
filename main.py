@@ -2,6 +2,9 @@ import Cypher
 import Page
 import settings
 
+""" All current commits on this page are for testing purposes 
+    and are completely temporary """
+
 # Initialize settings
 settings = settings.settings()
 
@@ -13,10 +16,11 @@ index, char_values, page = Page.create_page(int(bytess))
 print(char_values) # Temporary placeholder
 print(page) # Temporary placeholder
 print(index) # Temporary placeholder
-message = Cypher.encrypt(cypher, index)
+encrypted = Cypher.encrypt(cypher, index)
 print('\n')
-print(message[0])
+print(encrypted)
 print('\n')
+#print(Cypher.get_key(cypher, 'f'))
 
 """
 
