@@ -22,3 +22,4 @@ class settings():
                       'q', 'r', 's', 't', 'u',
                       'v', 'w', 'x', 'y', 'z']
         self.debug = True
+        

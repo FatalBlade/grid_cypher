@@ -30,3 +30,4 @@ def create_page(bytes):
                 print(str(char_count) + ' usable characters')
     if settings.debug: print('List of values: ' + str(char_values))
     return (index, char_values, page)
+    
