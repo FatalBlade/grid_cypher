@@ -49,18 +49,24 @@ def filter_message(message, index):
             return True
     # Filters messages for lengths longer than available characters in page
     if len(message) > (len(index)/2):
-        print('Your message is too long you need more bytes, please restart program')
+        print('Your message is too long you need more bytes, ' +
+              'please restart program')
         # Waits 10 seconds to allow user to read above
         sleep(10)
         # Force ends program
         sys.exit()
     return False
 
-def get_message(index):
+def get_message(index, char_count):
     """ This function prompts a user to input a word """
     settings = config.settings()
     flag_filter = True
     while flag_filter:
+        print('\n')
+        # Informs user on Max message length based on page size
+        print('Your message can be ' + str(int(char_count)/2) + 
+              ' letters long')
+        print('\n')
         # Prompts user for a message to encrypt
         message_input = input('Please type out your message here: ')
         # Sets message to all lowercase
@@ -153,9 +159,9 @@ def create_cypher():
         print(cypher)
     return cypher
 
-def encrypt(cypher, index):
+def encrypt(cypher, index, char_count):
     """ This function will encrypt a message using the generated cypher """
-    message = get_message(index)
+    message = get_message(index, char_count)
     encrypted = ''
     for letter in message[0]:
         encrypted = encrypted + str(get_key(cypher, letter))

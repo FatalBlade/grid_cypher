@@ -29,5 +29,5 @@ def create_page(bytes):
                 # Prints current character count
                 print(str(char_count) + ' usable characters')
     if settings.debug: print('List of values: ' + str(char_values))
-    return (index, char_values, page)
+    return (index, char_values, page, char_count)
     

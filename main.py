@@ -12,11 +12,11 @@ cypher = Cypher.create_cypher()
 print('\n')
 bytess = input('How many bytes do you need? ')
 print('\n')
-index, char_values, page = Page.create_page(int(bytess))
-print(char_values) # Temporary placeholder
-print(page) # Temporary placeholder
-print(index) # Temporary placeholder
-encrypted = Cypher.encrypt(cypher, index)
+index, char_values, page, char_count = Page.create_page(int(bytess))
+print(char_values)
+print(page)
+print(index)
+encrypted = Cypher.encrypt(cypher, index, char_count)
 print('\n')
 print(encrypted)
 print('\n')
