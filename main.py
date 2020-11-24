@@ -21,11 +21,13 @@ print('\n')
 print(encrypted)
 print('\n')
 #print(Cypher.get_key(cypher, 'f'))
+decrypted = Cypher.decrypt(cypher, encrypted)
+print(decrypted)
+
 
 """
 
 replace():
 
-decrypt():
 
 """

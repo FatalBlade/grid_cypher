@@ -166,3 +166,17 @@ def encrypt(cypher, index, char_count):
     for letter in message[0]:
         encrypted = encrypted + str(get_key(cypher, letter))
     return encrypted
+
+def decrypt(cypher, encrypted):
+    """ This function will decrypt a message using the generated cypher """
+    settings = config.settings()
+    # Takes the string of encrypted char and turns it into two char numbers
+    split = [(encrypted[i:i+2]) for i in range(0, len(encrypted), 2)]
+    # Decrypted output string
+    decrypted = ''
+    for number in split:
+        if settings.debug:
+            #This should print out split as individual two digit numbers
+            print(number)
+        decrypted = decrypted + str(cypher.get(int(number)))
+    return decrypted
