@@ -11,15 +11,15 @@ class settings():
                      15, 25, 35, 45, 55]
         # This is the actual cypher itself at it's default a-z settings
         self.cypher = {11: 'a', 21: 'b', 31: 'c', 41: 'd', 51: 'e', 
-                       12: 'f', 22: 'g', 32: 'h', 42: 'i', 52: 'j/k',
+                       12: 'f', 22: 'g', 32: 'h', 42: 'i', 52: 'j',
                        13: 'l', 23: 'm', 33: 'n', 43: 'o', 53: 'p',
                        14: 'q', 24: 'r', 34: 's', 44: 't', 54: 'u',
                        15: 'v', 25: 'w', 35: 'x', 45: 'y', 55: 'z'}
-        # Default ordered list a-z
+        # Default ordered list a-z minus k
         self.alpha = ['a', 'b', 'c', 'd', 'e',
-                      'f', 'g', 'h', 'i', 'j/k',
+                      'f', 'g', 'h', 'i', 'j',
                       'l', 'm', 'n', 'o', 'p',
                       'q', 'r', 's', 't', 'u',
                       'v', 'w', 'x', 'y', 'z']
-        self.debug = True
+        self.debug = False
         

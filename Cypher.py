@@ -69,8 +69,10 @@ def get_message(index, char_count):
         print('\n')
         # Prompts user for a message to encrypt
         message_input = input('Please type out your message here: ')
+        # Changes all K's to J's Changing will Break cypher
+        message_jk = message_input.replace('k', 'j')
         # Sets message to all lowercase
-        message_lower = message_input.lower()
+        message_lower = message_jk.lower()
         # Strips all whitespace from message
         message = message_lower.replace(" ", "")
         # Runs message through various criteria filters
@@ -180,3 +182,4 @@ def decrypt(cypher, encrypted):
             print(number)
         decrypted = decrypted + str(cypher.get(int(number)))
     return decrypted
+
